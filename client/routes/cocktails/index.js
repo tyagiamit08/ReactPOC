@@ -1,19 +1,20 @@
 import React, { Component } from 'react';   
-import  {FormGroup ,FormControl ,ControlLabel,PageHeader,Table ,Image,Col} from 'react-bootstrap';
+import  {FormGroup ,FormControl ,ControlLabel,PageHeader,Table ,Image,Col,Button} from 'react-bootstrap';
 
 export default class Cocktail extends Component {
     render() {  
         return( 
         <div className="container"> 
               <PageHeader>Cocktails <small>Browse Cocktail recipies.</small></PageHeader>
-                    <form>
-                            <FormGroup  controlId="formBasicText">
+                 <form>
+                       <FormGroup  controlId="txtSearch">
                             <ControlLabel>Search cocktail by name</ControlLabel>
-                                    <FormControl type="text" placeholder="Enter Name"  /> 
-                            </FormGroup>
-                     </form>
- 
-                 <Table responsive>
+                                    <FormControl type="text" placeholder="Enter Name" controlId="txtSearch" style={{'width': '25%'}} /> 
+                                    <Button bsStyle="primary"  style={{'margin-top': '-33px','margin-right': '750px','float': 'right'}}>Submit</Button>
+                        </FormGroup> 
+                           
+                </form> 
+                <Table responsive>
                         <thead style={{'background':'#337ab7'}}>
                             <tr>
                                 <th>Name</th>
