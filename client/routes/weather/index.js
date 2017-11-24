@@ -1,9 +1,8 @@
-import React, { Component } from 'react';  
+import React, { Component } from 'react';    
 
 export default class Weather extends Component {
     render() {  
-        return(
-        <div>  
+        return(  
             <div className="container"> 
                   <h2>Welcome To Weather Page.</h2>  
                   <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
@@ -28,8 +27,7 @@ export default class Weather extends Component {
                       </tr> 
                     </tbody>
                   </table> 
-            </div>  
-        </div>       
+            </div>    
         )
     }
 }

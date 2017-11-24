@@ -1,8 +1,10 @@
 import React, { Component } from 'react'; 
-//import  './style.css' 
+// import  'style.css' 
+// import  '../header/style.css'
 import Home from '../../routes/home/';
 import Weather from '../../routes/weather/';
 import Dogs from '../../routes/dogs/';
+import Cocktail from '../../routes/Cocktails/';
 
 import  {Navbar,NavItem,MenuItem,Nav,NavDropdown,Breadcrumb,Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -15,15 +17,16 @@ export default class Header extends Component {
                 <Router>
                     <div>  
                         <div style={{'background': '#222222','height': '50px','color':'#9d9d9d','text-align': 'center','padding-top': '9px','font-size': '18px'}}> 
-                            <span style={{'margin-right': '890px'}}>React POC</span> 
+                            <span style={{'margin-right': '805px'}}>React POC</span> 
                             <span style={{'margin-right': '10px'}}> 
-                            <Link to={'/'} style={{'font-size': '15px'}}>Home</Link> | <Link to={'/Weather'} style={{'font-size': '15px'}}>Weather</Link> | <Link to={'/Dogs'} style={{'font-size': '15px'}}>Dogs</Link>  
+                            <Link to={'/'} style={{'font-size': '15px'}}>Home</Link> | <Link to={'/Weather'} style={{'font-size': '15px'}}>Weather</Link> | <Link to={'/Dogs'} style={{'font-size': '15px'}}>Dogs</Link>   | <Link to={'/Cocktail'} style={{'font-size': '15px'}}>Cocktails</Link> 
                             </span> 
                         </div>    
                             <Switch>
                                 <Route exact path='/' component={Home} />
                                 <Route exact path='/Weather' component={Weather} />
-                                <Route exact path='/Dogs' component={Dogs} />
+                                <Route exact path='/Dogs' component={Dogs} /> 
+                                <Route exact path='/Cocktail' component={Cocktail} /> 
                             </Switch>
                     </div>
                 </Router>   
