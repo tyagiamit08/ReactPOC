@@ -5,6 +5,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 
+var ExtractTextPlugin  = require("extract-text-webpack-plugin")
+
 module.exports = {
   entry: './client/index.js',
   output: {
@@ -14,8 +16,21 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=8192',
+        exclude: /node_modules/
+      }, 
+      {
+        test: /\.css$/,
+        loaders:['style-loader','css-loader']
+     }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig],
+  devServer: {
+    historyApiFallback: true
+   
+  }
 }
