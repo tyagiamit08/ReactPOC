@@ -13,13 +13,15 @@ export default class Header extends Component {
             <div>
                 <Router history={browserHistory}>
                     <div>    
-                        <div className="blueBack" > 
-                            <span className="header-title">React POC  <img src={require('../../poc.jpg')} className="header-logo" /> </span> 
+                        <div className="header" > 
+                            <span className="header-title">
+                                <NavLink to='/'> React POC  <img src={require('../../images/poc.jpg')} className="header-logo-image" /></NavLink>
+                            </span> 
                             <span  className="header-links-right"> 
-                             <NavLink to='/' className="size-15">Home</NavLink> |
-                             <NavLink to='/Weather' className="size-15"> Weather</NavLink> | 
-                             <NavLink to='/Dogs' className="size-15"> Dogs</NavLink>   | 
-                             <NavLink to='/Cocktail' className="size-15"> Cocktails</NavLink> 
+                                <NavLink to='/' className="size-15">Home</NavLink> |
+                                <NavLink to='/Weather' className="size-15"> Weather</NavLink> | 
+                                <NavLink to='/Dogs' className="size-15"> Dogs</NavLink>   | 
+                                <NavLink to='/Cocktail' className="size-15"> Cocktails</NavLink> 
                             </span>  
                         </div>     
                             <Route exact path='/' component={Home} />
@@ -28,36 +30,6 @@ export default class Header extends Component {
                             <Route  path='/Cocktail' component={Cocktail} />  
                     </div>
                 </Router>  
-
-                 {/* <Navbar inverse collapseOnSelect>
-                    <Navbar.Header>
-                    <Navbar.Brand>
-                        <a to="/">React POC</a>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                    <Nav>
-                         <LinkContainer to={'/Weather'}>
-                                 <NavItem eventKey={1} href="/" to="/">Home</NavItem>  
-                         </LinkContainer>
-                        <NavItem eventKey={2} href="/Weather" to="/Weather">Weather</NavItem> 
-                        <NavDropdown eventKey={3} title="Categories" id="basic-nav-dropdown">
-                        <LinkContainer to="/Weather">
-                               <MenuItem eventKey={3.1}>Dogs</MenuItem>
-                        </LinkContainer>
-                        <MenuItem eventKey={3.2}>Books</MenuItem>
-                        <MenuItem eventKey={3.3}>Music</MenuItem>
-                        <MenuItem divider />
-                        <MenuItem eventKey={3.3}>Help</MenuItem>
-                        </NavDropdown>
-                    </Nav>
-                    <Nav pullRight>
-                        <NavItem eventKey={1} href="#">Welcome Amit Tyagi</NavItem>
-                        <NavItem eventKey={2} href="#">Profile</NavItem>
-                    </Nav>
-                    </Navbar.Collapse>
-                </Navbar>     */}  
       </div>  
         )
     }

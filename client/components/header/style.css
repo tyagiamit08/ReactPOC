@@ -1,4 +1,4 @@
-.blueBack{
+.header{
     background: #222222; 
     height: 50px;
     color: #9d9d9d;  
@@ -16,11 +16,15 @@
 }
 
 .header-title{
-    margin-right: 760px;
+    margin-right: 760px; 
 }
 
-.header-logo{
+.header-logo-image{
     height: 35px;
     width: 35px;
     border-radius: 50%;
+} 
+
+a:hover,a:visited,a:active,a:focus{
+    text-decoration: none;
 }

@@ -9,19 +9,20 @@ export default class Cocktail extends Component {
         this.state = { 
             drinks: undefined 
         } ; 
+
        this.generateDrinksList = this.generateDrinksList.bind(this);
       }
 
     componentWillMount() {
-        // axios.get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-        // .then(function (response) {
-        //      console.log(response);
-        //         if(response.status==200) 
-        //            this.setState({ drinks:response.data.drinks});
-        //         })
-        // .catch(function (error) {
-        //      console.log(error);
-        // });
+        axios.get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+        .then(function (response) {
+             console.log(response);
+                if(response.status==200) 
+                   this.setState({ drinks:response.data.drinks});
+                })
+        .catch(function (error) {
+             console.log(error);
+        });
     }
 
     generateDrinksList (lists) { 
@@ -41,6 +42,7 @@ export default class Cocktail extends Component {
         let drinksList= this.state.drinks !==undefined? this.generateDrinksList(this.state.drinks) :null;
 
         return( 
+            
         <div className="container"> 
               <PageHeader>Cocktails <small>Browse Cocktail recipies.</small></PageHeader>
                  <form>
