@@ -1,0 +1,12 @@
+.table-margin{
+  margin-top: 15px;
+}
+
+.table-header{
+    background-color: #9ac6eb;
+}
+
+.image-header{
+    height: 120px !important;
+    width: 120px !important;
+};
