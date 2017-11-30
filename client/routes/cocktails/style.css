@@ -1,10 +1,19 @@
 .btn-submit{
     margin-top:-33px;
-    margin-right: 750px;
+    margin-right: 820px;
     float: right;
 }
 
 .background{
     background:#405f88;
     color:#ffffff;
+}
+
+.profile{
+    width:100px;
+    height:100px;
+}
+
+.select{
+    width: 20%;
 }
