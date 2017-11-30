@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import  {FormGroup ,FormControl ,ControlLabel,PageHeader,Table ,Image,Col,Button} from 'react-bootstrap';
 import axios from 'axios';
 
+import './style.css'
+
 export default class Cocktail extends Component {
  
     constructor(props) {
@@ -15,6 +17,7 @@ export default class Cocktail extends Component {
         axios.get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
             .then((response) => { 
                     if(response.status==200) 
+                    console.log(response.data.drinks);
                         this.setState({ 'drinks':response.data.drinks}); 
                     })
             .catch(function (error) {
@@ -22,12 +25,12 @@ export default class Cocktail extends Component {
             });
     }
 
-    generateDrinksList (lists) {  
-           return lists.map((list, i) =>
+    generateDrinksList (lists) {   
+           return lists.map((list, i) =>         
                 <tr>
                     <td><Image  src={list.strDrinkThumb} style={{'width': '100px','height': '100px'}} rounded /></td>
-                    <td>{list.Alchoholic}</td>
-                    <td>{list.Name}</td>
+                    <td>{list.strAlcoholic}</td>
+                    <td>{list.strDrink}</td>
                     <td>{list.strInstructions}</td>
                 </tr> 
         )
@@ -45,12 +48,12 @@ export default class Cocktail extends Component {
                        <FormGroup  controlId="txtSearch">
                             <ControlLabel>Search cocktail by name</ControlLabel>
                                     <FormControl type="text" placeholder="Enter Name" style={{'width': '25%'}} /> 
-                                    <Button bsStyle="primary"  style={{'margin-top': '-33px','margin-right': '750px','float': 'right'}}>Submit</Button>
+                                    <Button bsStyle="primary"  className="btn-submit background" >Submit</Button>
                         </FormGroup>    
                            
                 </form> 
                 <Table responsive>
-                        <thead style={{'background':'#337ab7'}}>
+                        <thead className="background">
                             <tr>
                                 <th>Name</th>
                                 <th>Alchoholic</th> 

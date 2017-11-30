@@ -1,3 +1,10 @@
-.testUser{
-display: block; 
+.btn-submit{
+    margin-top:-33px;
+    margin-right: 750px;
+    float: right;
+}
+
+.background{
+    background:#405f88;
+    color:#ffffff;
 }
