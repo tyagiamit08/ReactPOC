@@ -39,15 +39,15 @@ export default class Cocktail extends Component {
         });    
     }
 
-    generateDrinksList (lists) {   
-           return lists.map((list, i) =>         
-                <tr>
-                    <td><Image  src={list.strDrinkThumb} className="profile" rounded /></td>
-                    <td>{list.strAlcoholic}</td>
-                    <td>{list.strDrink}</td>
-                    <td>{list.strInstructions}</td>
-                </tr> 
-        );
+    generateDrink (drink) {  
+         
+        return  drink.map((drk, i) =>         
+            <tr>
+                 <td><Image  src={drk.strDrinkThumb} className="profile" rounded /></td>
+                 <td>{drk.strAlcoholic}</td>
+                 <td>{drk.strDrink}</td>
+                 <td>{drk.strInstructions}</td>
+            </tr> );  
     };
 
     generateCocktails (lists) {   
@@ -74,7 +74,7 @@ export default class Cocktail extends Component {
 
     render() {  
 
-        let drinksList= this.state.drinks !==undefined? this.generateDrinksList(this.state.drinks) :null;
+        let drink= this.state.drinks !==undefined? this.generateDrink(this.state.drinks) :null;
         let cocktails= this.state.cocktails !==undefined? this.generateCocktails(this.state.cocktails) :null;
 
         return( 
@@ -94,14 +94,14 @@ export default class Cocktail extends Component {
                 <Table responsive>
                         <thead className="background">
                             <tr>
-                                <th>Name</th>
-                                <th>Alchoholic</th> 
-                                <th>Drink</th>
-                                <th>Instructions </th>
-                        </tr>
+                                <th width="20%">PROFILE</th>
+                                <th width="15%">ALCHOHOLIC</th> 
+                                <th width="15%">DRINK</th>
+                                <th width="50%">INSTRUCTIONS </th>
+                           </tr>
                         </thead>   
                         <tbody> 
-                          {drinksList}
+                          {drink}
                         </tbody>
                   </Table>  
         </div>  
